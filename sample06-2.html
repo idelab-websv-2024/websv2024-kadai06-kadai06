@@ -5,23 +5,29 @@
   </head>
   <script  src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
-function showNasa()
+function showprofile()
 {
+  //divの中身をクリア
+  document.getElementById("Xprofile").innerHTML="<div id='Xprofile'></div>";
+
+  var input_username = document.getElementById('username').value;
+
   twttr.widgets.createTimeline(
       {
         sourceType: "profile",
-        screenName: "nasa"
+        screenName: input_username
       },
-      document.getElementById("nasaSpace")
+      document.getElementById("Xprofile")
   );
 }
   </script>
 
   <body>
 
-<button type="button" name="NASA" onclick='showNasa()'>NASA</button>
+    <input type="text" id="username"></input>
+    <button type="button" name="profile" onclick='showprofile()'>search</button>
 
-<div id='nasaSpace'></div>
+<div id='Xprofile'></div>
 
   </body>
 </html>
